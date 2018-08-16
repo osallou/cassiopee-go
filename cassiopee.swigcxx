@@ -1,0 +1,28 @@
+%module cassiopee
+
+
+%{
+#include "include/Cassiopee.h"
+%}
+
+%include <std_string.i>
+%include <std_list.i>
+%include <std_vector.i>
+
+%include "Cassiopee.h"
+
+%inline %{
+
+vector<Match*> GetMatchList(CassieSearch* c){
+    vector<Match*> res;
+    for (std::list<Match*>::iterator it = c->matches.begin(); it != c->matches.end(); it++) {
+        //Match* m = new Match();
+        //m->pos = (*it)->pos;
+        res.push_back(*it);
+    }
+    return res;
+
+}
+%}
+%template(MatchList) std::list<Match*>;
+%template(MatchVectorList) std::vector<Match*>;
