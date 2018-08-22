@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <list>
+#include <map>
 
 #include "tree/tree.hh"
 
@@ -348,6 +349,8 @@ public:
 	 * Remove matches with same position and same length.
 	 */
 	void removeDuplicates();
+
+	map<std::string, string> morphisms;
 
 	/**
 	 * Used to store max errors allowed
