@@ -8,6 +8,7 @@
 %include <std_string.i>
 %include <std_list.i>
 %include <std_vector.i>
+%include <std_map.i>
 
 %include "Cassiopee.h"
 
@@ -26,3 +27,4 @@ vector<Match*> GetMatchList(CassieSearch* c){
 %}
 %template(MatchList) std::list<Match*>;
 %template(MatchVectorList) std::vector<Match*>;
+%template(MapStringString) std::map<string, string>;
