@@ -2,7 +2,7 @@
 
 
 %{
-#include "include/Cassiopee.h"
+#include "cassiopee/Cassiopee.h"
 %}
 
 %include <std_string.i>
